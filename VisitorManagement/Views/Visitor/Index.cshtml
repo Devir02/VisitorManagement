@@ -1,0 +1,42 @@
+﻿@model IEnumerable<VisitorManagement.Models.tbl_UK_Visitors>
+
+@{
+    ViewBag.Title = "Visitors to UK";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Register New EU Visitor", "CreateEU")
+    @Html.ActionLink("Register New Non EU Visitor", "CreateNonEU")
+   
+</p>
+<div><b>UK Visitor Details</b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Passport Number</th>
+        <th>EU Citizen/Non EU Citizen</th>
+
+    </tr>
+    @foreach (var d in Model)
+    {
+<tr>
+    <td>@d.FirstName</td>
+    <td>@d.LastName</td>
+    <td>@d.PassportNumber</td>
+    <td>
+        @if (d.IsEUCitizen == true)
+        {
+            @Html.Label("EU Citizen")}
+
+        else
+        { 
+            @Html.Label("Non EU Citizen")}
+    </td>
+
+</tr>
+
+    }
+</table>  

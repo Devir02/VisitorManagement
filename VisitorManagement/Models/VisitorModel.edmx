@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VisitorDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_UK_Visitors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="PassportNumber" Type="varchar" MaxLength="255" />
+          <Property Name="IsEUCitizen" Type="bit" />
+          <Property Name="PassportValidFrom" Type="datetime" />
+          <Property Name="PassportValidTo" Type="datetime" />
+          <Property Name="CountryOfNationality" Type="varchar" MaxLength="255" />
+          <Property Name="VisaNumber" Type="varchar" MaxLength="255" />
+          <Property Name="VisaValidFrom" Type="datetime" />
+          <Property Name="VisaValidTo" Type="datetime" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="ExitDate" Type="datetime" />
+          <Property Name="BiometricNumber" Type="varchar" MaxLength="255" />
+          <Property Name="NumberOfPreviousUKVisits" Type="int" />
+          <Property Name="EntryApproved" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="VisitorDbModelStoreContainer">
+          <EntitySet Name="tbl_UK_Visitors" EntityType="Self.tbl_UK_Visitors" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VisitorDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_UK_Visitors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsEUCitizen" Type="Boolean" />
+          <Property Name="PassportValidFrom" Type="DateTime" Precision="3" />
+          <Property Name="PassportValidTo" Type="DateTime" Precision="3" />
+          <Property Name="CountryOfNationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VisaNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VisaValidFrom" Type="DateTime" Precision="3" />
+          <Property Name="VisaValidTo" Type="DateTime" Precision="3" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="ExitDate" Type="DateTime" Precision="3" />
+          <Property Name="BiometricNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfPreviousUKVisits" Type="Int32" />
+          <Property Name="EntryApproved" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="VisitorDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_UK_Visitors" EntityType="Self.tbl_UK_Visitors" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VisitorDbModelStoreContainer" CdmEntityContainer="VisitorDataContext">
+          <EntitySetMapping Name="tbl_UK_Visitors">
+            <EntityTypeMapping TypeName="VisitorDbModel.tbl_UK_Visitors">
+              <MappingFragment StoreEntitySet="tbl_UK_Visitors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="IsEUCitizen" ColumnName="IsEUCitizen" />
+                <ScalarProperty Name="PassportValidFrom" ColumnName="PassportValidFrom" />
+                <ScalarProperty Name="PassportValidTo" ColumnName="PassportValidTo" />
+                <ScalarProperty Name="CountryOfNationality" ColumnName="CountryOfNationality" />
+                <ScalarProperty Name="VisaNumber" ColumnName="VisaNumber" />
+                <ScalarProperty Name="VisaValidFrom" ColumnName="VisaValidFrom" />
+                <ScalarProperty Name="VisaValidTo" ColumnName="VisaValidTo" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="ExitDate" ColumnName="ExitDate" />
+                <ScalarProperty Name="BiometricNumber" ColumnName="BiometricNumber" />
+                <ScalarProperty Name="NumberOfPreviousUKVisits" ColumnName="NumberOfPreviousUKVisits" />
+                <ScalarProperty Name="EntryApproved" ColumnName="EntryApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
